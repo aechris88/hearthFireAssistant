@@ -1,0 +1,531 @@
+<html>
+	<head>
+		<title>Hearthfire BOM</title>
+		<style>
+			form fieldset{
+				width: 200px;
+			}
+			#firstcol, #secondcol, #thirdcol, #fourthcol{
+				float: left;
+				margin: 0 35px;
+			}
+			label.count{
+				color:maroon;
+				font-weight:bold;
+			}
+		</style>
+	</head>
+	<body onload = "getBom()">
+			<form id = "myForm">
+			<div id = "theoptions">
+				<label>Location:</label>
+				<select name = "Location" onChange = "getBom()">
+					<option value = "Heljarchen Hall">Heljarchen Hall</option>
+					<option value = "Lakeview Manor">Lakeview Manor</option>
+					<option value = "Windstad Manor">Windstad Manor</option>
+				</select>
+				<br>
+				<label>East Wing:</label>
+				<select name = "East Wing" onChange = "getBom()">
+					<option value = "Armory">Armory</option>
+					<option value = "Kitchen">Kitchen</option>
+					<option value = "Library">Library</option>
+				</select>
+				<br>
+				<label>North Wing:</label>
+				<select name = "North Wing" onChange = "getBom()">
+					<option value = "Trophy Room">Trophy Room</option>
+					<option value = "Storage Room">Storage Room</option>
+					<option value = "Alchemy Laboratory">Alchemy Laboratory</option>
+				</select>
+				<br>
+				<label>West Wing:</label>
+				<select name = "West Wing" onChange = "getBom()">
+					<option value = "Bedrooms">Bedrooms</option>
+					<option value = "Greenhouse">Greenhouse</option>
+					<option value = "Enchanter's Tower">Enchanter's Tower</option>
+				</select>
+				<br>
+				<input type = "checkbox" value = "Vampire" onchange = "getBom()">Vampire?</input>
+				<br>
+				<input type = "radio" name = "remodel" value = "smallHouseLayout" checked = "true"
+					onchange = "getBom()">Small House Layout</radio>
+				<br>
+				<input type = "radio" name = "remodel" value = "remodelIntoEntryway"
+					onchange = "getBom()">Remodel Into Entryway</radio>
+				<fieldset id = "ExteriorCB">
+					<legend>Exterior</legend>
+						<input type = "checkbox" value = "Animal Pen" onchange = "getBom()">Animal Pen</input>
+						<br>
+						<input type = "checkbox" value = "Armorer Workbench" onchange = "getBom()">Armorer Workbench</input>
+						<br>
+						<input type = "checkbox" value = "Apiary" onchange = "getBom()">Apiary</input>
+						<br>
+						<input type = "checkbox" value = "Fish Hatchery" onchange = "getBom()">Fish Hatchery</input>
+						<br>
+						<input type = "checkbox" value = "Mill" onchange = "getBom()">Mill</input>
+						<br>
+						<input type = "checkbox" value = "Garden" onchange = "getBom()">Garden</input>
+						<br>
+						<input type = "checkbox" value = "Grindstone" onchange = "getBom()">Grindstone</input>
+						<br>
+						<input type = "checkbox" value = "Smelter" onchange = "getBom()">Smelter</input>
+						<br>
+						<input type = "checkbox" value = "Stable" onchange = "getBom()">Stable</input>
+				</fieldset>
+				</div>
+				
+			</form>
+			
+			<div id = "firstcol">
+				Amulet of Akatosh: <label class = "count" id = "AmuletAkatosh"></label>
+				<br>Amulet of Arkay: <label class = "count" id = "AmuletArkay"></label>
+				<br>Amulet of Dibella: <label class = "count" id = "AmuletDibella"></label>
+				<br>Amulet of Julianos: <label class = "count" id = "AmuletJulianos"></label>
+				<br>Amulet of Kynareth: <label class = "count" id = "AmuletKynareth"></label>
+				<br>Amulet of Mara: <label class = "count" id = "AmuletMara"></label>
+				<br>Amulet of Stendarr: <label class = "count" id = "AmuletStendarr"></label>
+				<br>Amulet of Talos: <label class = "count" id = "AmuletTalos"></label>
+				<br>Amulet of Zenithar: <label class = "count" id = "AmuletZenithar"></label>
+				<br>Bear Pelt: <label class = "count" id = "BearPelt"></label>
+				<br>Clay: <label class = "count" id = "Clay"></label>
+				<br>Corundum Ingot: <label class = "count" id = "CorundumIngot"></label>
+			</div>
+			<div id = "secondcol">
+				Deer Hide: <label class = "count" id = "DeerHide"></label>
+				<br>Dragon Bone: <label class = "count" id = "DragonBone"></label>
+				<br>Dragon Scales: <label class = "count" id = "DragonScales"></label>
+				<br>Ebony Ingot: <label class = "count" id = "EbonyIngot"></label>
+				<br>Flawless Amethyst: <label class = "count" id = "FlawlessAmethyst"></label>
+				<br>Flawless Sapphire: <label class = "count" id = "FlawlessSapphire"></label>
+				<br>Glass: <label class = "count" id = "Glass"></label>
+				<br>Goat Hide: <label class = "count" id = "GoatHide"></label>
+				<br>Goat Horns: <label class = "count" id = "GoatHorns"></label>
+				<br>Gold Ingot: <label class = "count" id = "GoldIngot"></label>
+				<br>Grand Soul Gem: <label class = "count" id = "GrandSoulGem"></label>
+				<br>Hinges: <label class = "count" id = "Hinges"></label>
+			</div>
+			<div id = "thirdcol">
+				Horker Tusks: <label class = "count" id = "HorkerTusk"></label>
+				<br>Iron Fittings: <label class = "count" id = "IronFittings"></label>
+				<br>Iron Ingot: <label class = "count" id = "IronIngot"></label>
+				<br>Large Antlers: <label class = "count" id = "LargeAntlers"></label>
+				<br>Leather Strips: <label class = "count" id = "LeatherStrips"></label>
+				<br>Locks: <label class = "count" id = "Locks"></label>
+				<br>Mudcrab Chitin: <label class = "count" id = "MudcrabChitin"></label>
+				<br>Nails: <label class = "count" id = "Nails"></label>
+				<br>Orichalcum Ingot: <label class = "count" id = "OrichalcumIngot"></label>
+				<br>Quarried Stone: <label class = "count" id = "QuarriedStone"></label>
+				<br>Quicksilver Ingot: <label class = "count" id = "QuicksilverIngot"></label>
+				<br>Refined Malachite: <label class = "count" id = "RefinedMalachite"></label>
+			</div>
+			<div id = "fourthcol">
+				Refined Moonstone: <label class = "count" id = "RefinedMoonstone"></label>
+				<br>Sabre Cat Pelt: <label class = "count" id = "SabreCatPelt"></label>
+				<br>Sabre Cat Snow Pelt: <label class = "count" id = "SabreCatSnowPelt"></label>
+				<br>Sabre Cat Teeth: <label class = "count" id = "SabreCatTeeth"></label>
+				<br>Sawn Logs: <label class = "count" id = "SawnLogs"></label>
+				<br>Silver Ingot: <label class = "count" id = "SilverIngot"></label>
+				<br>Slaughterfish Scales: <label class = "count" id = "SlaughterfishScales"></label>
+				<br>Small Antlers: <label class = "count" id = "SmallAntlers"></label>
+				<br>Steel Ingot: <label class = "count" id = "SteelIngot"></label>
+				<br>Straw: <label class = "count" id = "Straw"></label>
+				<br>Vampire Dust: <label class = "count" id = "VampireDust"></label>
+				<br>Wolf Pelt: <label class = "count" id = "WolfPelt"></label>
+			</div>
+			
+		<script>
+			function getBom() {
+				//Set up all of the variables to count the materials
+				var AmuletAkatosh = 1;
+				var AmuletArkay = 1;
+				var AmuletDibella = 1;
+				var AmuletJulianos = 1;
+				var AmuletKynareth = 1;
+				var AmuletMara = 1;
+				var AmuletStendarr = 1;
+				var AmuletTalos = 1;
+				var AmuletZenithar = 1;
+				var AncientNordBow = 0;
+				var AncientNordSword = 0;
+				var AncientNordArrow = 0;
+				var BearClaws = 0;
+				var BearPelt = 2;
+				var BoneMeal = 0;
+				var CharredSkeeverHide = 0;
+				var ChaurusChitin = 0;
+				var Clay = 44;
+				var CorundumIngot = 1;
+				var CowHide = 0;
+				var DeerHide = 2;
+				var DragonBone = 1;
+				var DragonScales = 1;
+				var DwemerScrapMetal = 0;
+				var EbonyIngot = 2;
+				var FalmerEar = 0;
+				var FalmerSword = 0;
+				var FlawlessAmethyst = 1;
+				var FlawlessSapphire = 1;
+				var FrostbiteVenom = 0;
+				var Glass = 10;
+				var GoatHide = 1;
+				var GoatHorns = 11;
+				var GoldIngot = 3;
+				var GrandSoulGem = 1;
+				var HagravenClaw = 0;
+				var HagravenFeather = 0;
+				var Hinges = 40;
+				var HorkerTusk = 2;
+				var IceWolfPelt = 0;
+				var IronFittings = 45;
+				var IronIngot = 29;
+				var LargeAntlers = 3;
+				var LeatherStrips = 26;
+				var Locks = 17;
+				var MudcrabChitin = 2;
+				var Nails = 358;
+				var OrichalcumIngot = 2;
+				var PettySoulGem = 0;
+				var QuarriedStone = 158;
+				var QuicksilverIngot = 3;
+				var RefinedMalachite = 2;
+				var RefinedMoonstone = 3;
+				var SabreCatPelt = 0;
+				var SabreCatSnowPelt = 2;
+				var SabreCatTeeth = 3;
+				var SawnLogs = 231;
+				var SilverIngot = 4;
+				var SkeeverTail = 0;
+				var SlaughterfishScales = 8;
+				var SmallAntlers = 1;
+				var SnowBearPelt = 0;
+				var SteelIngot = 36;
+				var Straw = 8;
+				var Taproot = 0;
+				var TrollFat = 0;
+				var TrollSkull = 0;
+				var VampireDust = 0;
+				var WolfPelt = 2;		
+
+				var x = document.getElementById("myForm");
+				var loc = x.elements[0].value;
+				var ewing = x.elements[1].value;
+				var nwing = x.elements[2].value;
+				var wwing = x.elements[3].value;
+
+				switch (loc) {
+					case "Heljarchen Hall":
+						x.elements[10].checked = false;
+						x.elements[10].disabled = true;
+						x.elements[11].checked = false;
+						x.elements[11].disabled = true;
+						x.elements[12].disabled = false;
+						break;
+					case "Lakeview Manor":
+						x.elements[10].disabled = false;
+						x.elements[11].checked = false;
+						x.elements[11].disabled = true;
+						x.elements[12].checked = false;
+						x.elements[12].disabled = true;
+						break;
+					case "Windstad Manor":
+						x.elements[10].checked = false;
+						x.elements[10].disabled = true;
+						x.elements[11].disabled = false;
+						x.elements[12].checked = false;
+						x.elements[12].disabled = true;
+						break;
+				}
+				
+				if (x.elements[4].checked == true) {
+						Nails += 2;
+						SawnLogs += 1;
+						Hinges += 1;
+						VampireDust +=1;
+				}
+				
+				//Animal Pen Checkbox
+				if (x.elements[8].checked == true) {
+					SawnLogs += 1;
+				}
+				
+				//Armorer Workbench Checkbox
+				if (x.elements[9].checked == true) {
+					QuarriedStone += 2;
+					IronIngot += 1;
+					SawnLogs += 1;
+				}
+				
+				//Apiary Checkbox
+				if (x.elements[10].checked == true) {
+					SawnLogs += 2;
+					Nails += 1;
+					Straw += 2;
+				}
+				
+				//Fish Hatchery Checkbox
+				if (x.elements[11].checked == true) {
+					QuarriedStone += 3;
+					SawnLogs += 3;
+					Nails += 4;
+				}
+				
+				//Mill Checkbox
+				if (x.elements[12].checked == true) {
+					QuarriedStone += 2;
+					SawnLogs += 2;
+					IronFittings += 2;
+				}
+				
+				//Garden Checkbox
+				if (x.elements[13].checked == true) {
+					SawnLogs += 1;
+				}
+				
+				//Grindstone Checkbox
+				if (x.elements[14].checked == true) {
+					QuarriedStone += 1;
+					SawnLogs += 1;
+					IronFittings += 1;
+				}
+				
+				//Smelter Checkbox
+				if (x.elements[15].checked == true) {
+					IronFittings += 2;
+					IronIngot += 5;
+					Clay += 6;
+					QuarriedStone += 4;
+				}
+				
+				//Stable Checkbox
+				if (x.elements[16].checked == true) {
+					SawnLogs += 3;
+					Nails += 5;
+				}
+				
+				if (x.elements[5].checked == true) {
+					Glass += 1;
+					GoatHorns += 2;
+					Hinges += 1;
+					IronFittings += 4;
+					IronIngot += 2;
+					LeatherStrips += 4;
+					Nails += 20;
+					QuarriedStone += 1;
+					SawnLogs += 11;
+					Straw += 2;
+				} else if (x.elements[5].checked == false) {
+					BearPelt += 1;
+					DeerHide += 1;
+					Glass += 2;
+					GoatHorns += 3;
+					Hinges += 2;
+					IronFittings += 8;
+					IronIngot += 1;
+					LargeAntlers += 2;
+					LeatherStrips += 6;
+					Nails += 22;
+					SabreCatPelt += 1;
+					SabreCatSnowPelt += 1;
+					SabreCatTeeth += 4;
+					SawnLogs += 15;
+					WolfPelt += 1;
+				}
+				
+				switch (ewing) {
+					case "Armory":
+						BearPelt += 1;
+						Clay += 3;
+						Glass += 6;
+						GoatHorns += 9;
+						Hinges += 16;
+						HorkerTusk += 2;
+						IronFittings += 29;
+						IronIngot += 4;
+						LeatherStrips += 8;
+						Locks += 5;
+						Nails += 78;
+						QuarriedStone += 26;
+						SabreCatPelt += 1;
+						SabreCatTeeth += 2;
+						SawnLogs += 63;
+						Straw += 4;
+						WolfPelt += 1;
+						break;
+					case "Kitchen":
+						Clay += 5;
+						GoatHorns += 7;
+						Hinges += 4;
+						HorkerTusk += 2;
+						IronFittings += 12;
+						IronIngot += 9;
+						LargeAntlers += 1;
+						LeatherStrips += 2;
+						Nails += 54;
+						QuarriedStone += 21;
+						SawnLogs += 38;
+						break;
+					case "Library":
+						Clay += 9;
+						Hinges += 6;
+						IronFittings += 3;
+						Locks += 3;
+						Nails += 34;
+						QuarriedStone += 16;
+						SawnLogs += 24;
+						break;
+				}
+				
+				switch (nwing) {
+					case "Alchemy Laboratory":
+						Clay += 9;
+						Glass += 3;
+						GoatHorns += 7;
+						Hinges += 14;
+						IronFittings += 15;
+						IronIngot += 7;
+						LeatherStrips += 1;
+						Locks += 3;
+						MudcrabChitin += 2;
+						Nails += 68;
+						QuarriedStone += 16;
+						QuicksilverIngot += 1;
+						SawnLogs += 44;
+						SteelIngot += 6;
+						break;
+					case "Storage Room":
+						Clay += 3;
+						Glass += 4;
+						GoatHide += 1;
+						GoatHorns +=2;
+						Hinges += 27;
+						IronFittings += 17;
+						IronIngot += 5;
+						LeatherStrips += 3;
+						Locks += 12;
+						MudcrabChitin += 2;
+						Nails += 79;
+						QuarriedStone += 18;
+						SawnLogs += 55;
+						SteelIngot += 3;
+						WolfPelt += 1;
+						break;
+					case "Trophy Room":
+						Clay += 13;
+						Glass += 1;
+						GoatHide += 1;
+						GoatHorns += 4;
+						Hinges += 7;
+						HorkerTusk += 2;
+						IronFittings += 4;
+						LeatherStrips += 2;
+						Locks += 3;
+						Nails += 50;
+						QuarriedStone += 21;
+						SawnLogs += 42;
+						break;
+				}
+				
+				switch (wwing) {
+					case "Bedrooms":
+						BearPelt += 1;
+						Clay += 3;
+						Glass += 2;
+						GoatHorns += 2;
+						Hinges += 18;
+						IronFittings += 14;
+						IronIngot += 2;
+						LeatherStrips += 10;
+						Locks += 8;
+						MudcrabChitin += 2;
+						Nails += 75;
+						QuarriedStone += 18;
+						SawnLogs += 53;
+						SteelIngot += 3;
+						Straw += 4;
+						break;
+					case "Enchanter's Tower":
+						Clay += 9;
+						Glass += 3;
+						GoatHide += 1;
+						GoatHorns += 1;
+						GoldIngot += 1;
+						GrandSoulGem += 1;
+						Hinges += 12;
+						IronFittings += 10;
+						IronIngot += 5;
+						LeatherStrips += 1;
+						Locks += 5;
+						Nails += 56;
+						QuarriedStone += 17;
+						RefinedMoonstone += 1;
+						SawnLogs += 41
+						break;
+					case "Greenhouse":
+						Clay += 21;
+						Glass += 6;
+						GoatHide += 2;
+						GoatHorns += 6;
+						Hinges += 10;
+						IronFittings += 14;
+						LeatherStrips += 4;
+						MudcrabChitin += 4;
+						Locks += 2;
+						Nails += 76;
+						QuarriedStone += 20;
+						SawnLogs += 51;
+						break;
+				}
+			
+			document.getElementById("AmuletAkatosh").innerHTML = AmuletAkatosh;
+			document.getElementById("AmuletArkay").innerHTML = AmuletArkay;
+			document.getElementById("AmuletDibella").innerHTML = AmuletDibella;
+			document.getElementById("AmuletJulianos").innerHTML = AmuletJulianos;
+			document.getElementById("AmuletKynareth").innerHTML = AmuletKynareth;
+			document.getElementById("AmuletMara").innerHTML = AmuletMara;
+			document.getElementById("AmuletStendarr").innerHTML = AmuletStendarr;
+			document.getElementById("AmuletTalos").innerHTML = AmuletTalos;
+			document.getElementById("AmuletZenithar").innerHTML = AmuletZenithar;
+			document.getElementById("BearPelt").innerHTML = BearPelt;
+			document.getElementById("Clay").innerHTML = Clay;
+			document.getElementById("CorundumIngot").innerHTML = CorundumIngot;
+			document.getElementById("DeerHide").innerHTML = DeerHide;
+			document.getElementById("DragonBone").innerHTML = DragonBone;
+			document.getElementById("DragonScales").innerHTML = DragonScales;
+			document.getElementById("EbonyIngot").innerHTML = EbonyIngot;
+			document.getElementById("FlawlessAmethyst").innerHTML = FlawlessAmethyst;
+			document.getElementById("FlawlessSapphire").innerHTML = FlawlessSapphire;
+			document.getElementById("Glass").innerHTML = Glass;
+			document.getElementById("GoatHide").innerHTML = GoatHide;
+			document.getElementById("GoatHorns").innerHTML = GoatHorns;
+			document.getElementById("GoldIngot").innerHTML = GoldIngot;
+			document.getElementById("GrandSoulGem").innerHTML = GrandSoulGem;
+			document.getElementById("Hinges").innerHTML = Hinges;
+			document.getElementById("HorkerTusk").innerHTML = HorkerTusk;
+			document.getElementById("IronFittings").innerHTML = IronFittings;
+			document.getElementById("IronIngot").innerHTML = IronIngot;
+			document.getElementById("LargeAntlers").innerHTML = LargeAntlers;
+			document.getElementById("LeatherStrips").innerHTML = LeatherStrips;
+			document.getElementById("Locks").innerHTML = Locks;
+			document.getElementById("MudcrabChitin").innerHTML = MudcrabChitin;
+			document.getElementById("Nails").innerHTML = Nails;
+			document.getElementById("OrichalcumIngot").innerHTML = OrichalcumIngot;
+			document.getElementById("QuarriedStone").innerHTML = QuarriedStone;
+			document.getElementById("QuicksilverIngot").innerHTML = QuicksilverIngot;
+			document.getElementById("RefinedMalachite").innerHTML = RefinedMalachite;
+			document.getElementById("RefinedMoonstone").innerHTML = RefinedMoonstone;
+			document.getElementById("SabreCatPelt").innerHTML = SabreCatPelt;
+			document.getElementById("SabreCatSnowPelt").innerHTML = SabreCatSnowPelt;
+			document.getElementById("SabreCatTeeth").innerHTML = SabreCatTeeth;
+			document.getElementById("SawnLogs").innerHTML = SawnLogs;
+			document.getElementById("SilverIngot").innerHTML = SilverIngot;
+			document.getElementById("SlaughterfishScales").innerHTML = SlaughterfishScales;
+			document.getElementById("SmallAntlers").innerHTML = SmallAntlers;
+			document.getElementById("SteelIngot").innerHTML = SteelIngot;
+			document.getElementById("Straw").innerHTML = Straw;
+			document.getElementById("VampireDust").innerHTML = VampireDust;
+			document.getElementById("WolfPelt").innerHTML = WolfPelt;
+		}
+		</script>
+	</body>
+</html>
